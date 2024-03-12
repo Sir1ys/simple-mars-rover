@@ -12,6 +12,10 @@ function marsRover(instructions) {
     if (instruction === "L") {
       direction = "W";
     }
+
+    if (instruction === "R") {
+      direction = "E";
+    }
   }
 
   return `${xDir}:${yDir}:${direction}`;
