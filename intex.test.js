@@ -8,6 +8,10 @@ describe("marsRover", () => {
     expect(marsRover("MMMM")).toBe("0:4:N");
   });
 
+  it("return correct position when 10 moves forward are passed", () => {
+    expect(marsRover("MMMMMMMMMM")).toBe("0:0:N");
+  });
+
   it("return correct position when changing direction to left is passed", () => {
     expect(marsRover("L")).toBe("0:0:W");
   });

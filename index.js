@@ -5,8 +5,13 @@ function marsRover(instructions) {
 
   for (let i = 0; i < instructions.length; i++) {
     let instruction = instructions[i];
+
     if (instruction === "M") {
       yDir += 1;
+    }
+
+    if (yDir === 10) {
+      yDir = 0;
     }
 
     if (instruction === "L") {
