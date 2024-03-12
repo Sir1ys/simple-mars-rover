@@ -1,14 +1,20 @@
-function marsRover(direction) {
+function marsRover(instructions) {
   let xDir = 0;
   let yDir = 0;
+  let direction = "N";
 
-  for (let i = 0; i < direction.length; i++) {
-    if (direction[i] === "M") {
+  for (let i = 0; i < instructions.length; i++) {
+    let instruction = instructions[i];
+    if (instruction === "M") {
       yDir += 1;
+    }
+
+    if (instruction === "L") {
+      direction = "W";
     }
   }
 
-  return `${xDir}:${yDir}:N`;
+  return `${xDir}:${yDir}:${direction}`;
 }
 
 module.exports = marsRover;
