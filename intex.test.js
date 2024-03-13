@@ -14,10 +14,14 @@ describe("marsRover", () => {
 
   it("return correct position when changing direction to left is passed", () => {
     expect(marsRover("L")).toBe("0:0:W");
+    expect(marsRover("LL")).toBe("0:0:S");
+    expect(marsRover("LLL")).toBe("0:0:E");
   });
 
   it("return correct position when changing direction to right is passed", () => {
     expect(marsRover("R")).toBe("0:0:E");
+    expect(marsRover("RR")).toBe("0:0:S");
+    expect(marsRover("RRR")).toBe("0:0:W");
   });
 
   it("return correct position when changing direction to left and moves forward are passed", () => {
@@ -42,5 +46,10 @@ describe("marsRover", () => {
 
   it("return correct position when 10 moves forward and direction to left are passed", () => {
     expect(marsRover("LMMMMMMMMMM")).toBe("0:0:W");
+  });
+
+  it("return correct position and direction when different instructions are passed", () => {
+    expect(marsRover("MMRMM")).toBe("2:2:E");
+    expect(marsRover("MMRMMMMLMMM")).toBe("2:2:E");
   });
 });

@@ -3,6 +3,8 @@ function marsRover(instructions) {
   let yDir = 0;
   let direction = "N";
 
+  const directions = ["N", "W", "S", "E"];
+
   for (let i = 0; i < instructions.length; i++) {
     let instruction = instructions[i];
 
@@ -22,12 +24,14 @@ function marsRover(instructions) {
       xDir = 0;
     }
 
+    const indexOfElement = directions.indexOf(direction);
+
     if (instruction === "L") {
-      direction = "W";
+      direction = directions[(indexOfElement + 1) % 4];
     }
 
     if (instruction === "R") {
-      direction = "E";
+      direction = directions[(indexOfElement + 3) % 4];
     }
   }
 
