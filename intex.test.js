@@ -35,4 +35,12 @@ describe("marsRover", () => {
     expect(marsRover("RMMMM")).toBe("4:0:E");
     expect(marsRover("RMMMMM")).toBe("5:0:E");
   });
+
+  it("return correct position when 10 moves forward and direction to right are passed", () => {
+    expect(marsRover("RMMMMMMMMMM")).toBe("0:0:E");
+  });
+
+  it("return correct position when 10 moves forward and direction to left are passed", () => {
+    expect(marsRover("LMMMMMMMMMM")).toBe("0:0:W");
+  });
 });

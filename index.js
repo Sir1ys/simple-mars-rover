@@ -18,6 +18,10 @@ function marsRover(instructions) {
       yDir = 0;
     }
 
+    if (xDir === 10) {
+      xDir = 0;
+    }
+
     if (instruction === "L") {
       direction = "W";
     }
