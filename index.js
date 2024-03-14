@@ -8,35 +8,26 @@ function marsRover(instructions) {
   for (let i = 0; i < instructions.length; i++) {
     let instruction = instructions[i];
 
-    if (instruction === "M" && direction === "N") {
-      if (yDir === 9) {
-        yDir = 0;
-      } else {
-        yDir += 1;
-      }
-    }
+    if (instruction === "M") {
+      switch (direction) {
+        case "N":
+          yDir === 9 ? (yDir = 0) : (yDir += 1);
+          break;
 
-    if (instruction === "M" && direction === "S") {
-      if (yDir === 0) {
-        yDir = 9;
-      } else {
-        yDir -= 1;
-      }
-    }
+        case "S":
+          yDir === 0 ? (yDir = 9) : (yDir -= 1);
+          break;
 
-    if (instruction === "M" && direction === "W") {
-      if (xDir === 0) {
-        xDir = 9;
-      } else {
-        xDir -= 1;
-      }
-    }
+        case "W":
+          xDir === 0 ? (xDir = 9) : (xDir -= 1);
+          break;
 
-    if (instruction === "M" && direction === "E") {
-      if (xDir === 9) {
-        xDir = 0;
-      } else {
-        xDir += 1;
+        case "E":
+          xDir === 9 ? (xDir = 0) : (xDir += 1);
+          break;
+
+        default:
+          break;
       }
     }
 
