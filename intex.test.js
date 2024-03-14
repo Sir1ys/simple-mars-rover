@@ -25,10 +25,10 @@ describe("marsRover", () => {
   });
 
   it("return correct position when changing direction to left and moves forward are passed", () => {
-    expect(marsRover("LM")).toBe("1:0:W");
-    expect(marsRover("LMM")).toBe("2:0:W");
-    expect(marsRover("LMMM")).toBe("3:0:W");
-    expect(marsRover("LMMMM")).toBe("4:0:W");
+    expect(marsRover("LM")).toBe("9:0:W");
+    expect(marsRover("LMM")).toBe("8:0:W");
+    expect(marsRover("LMMM")).toBe("7:0:W");
+    expect(marsRover("LMMMM")).toBe("6:0:W");
     expect(marsRover("LMMMMM")).toBe("5:0:W");
   });
 
@@ -50,6 +50,13 @@ describe("marsRover", () => {
 
   it("return correct position and direction when different instructions are passed", () => {
     expect(marsRover("MMRMM")).toBe("2:2:E");
-    expect(marsRover("MMRMMMMLMMM")).toBe("2:2:E");
+    expect(marsRover("MMRMMMLM")).toBe("3:3:N");
+    expect(marsRover("MMRMMMMLMMM")).toBe("4:5:N");
+    expect(marsRover("MMLMM")).toBe("8:2:W");
+    expect(marsRover("RMMMMMMMMMMM")).toBe("1:0:E");
+    expect(marsRover("RMMMMMMMMMM")).toBe("0:0:E");
+    expect(marsRover("MMMMMMMMMM")).toBe("0:0:N");
+    expect(marsRover("LLMM")).toBe("0:8:S");
+    expect(marsRover("MMRMMMLMMMLMMMM")).toBe("9:5:W");
   });
 });
